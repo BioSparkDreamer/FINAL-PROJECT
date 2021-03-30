@@ -184,7 +184,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7088189917463915680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 7088189917761573770}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +316,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeapon: 0
-  projectileObject: {fileID: 3013286712668613931, guid: 4f78c63f1f385ca4eb4af29644f006f9,
+  lightningCooldown: 0.8
+  lightningProjectileSpeed: 20
+  lightningProjectileObject: {fileID: 4688411033486608788, guid: b6736bbe75b393744a46d7450f7cb8f8,
+    type: 3}
+  fireCooldown: 0.2
+  fireProjectileSpeed: 7
+  fireProjectileObject: {fileID: 3013286712668613931, guid: 4f78c63f1f385ca4eb4af29644f006f9,
+    type: 3}
+  iceCooldown: 1.5
+  iceProjectileSpeed: 80
+  iceProjectileObject: {fileID: 2713489234077973362, guid: 5a2252387ce8eb642ad98dc30b89c9a9,
     type: 3}
   fireProjectileFromLocation: {fileID: 7088189917463915681}
   playerPosition: {fileID: 7088189917761573768}

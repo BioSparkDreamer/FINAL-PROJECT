@@ -9,7 +9,18 @@ public class PlayerWeaponFire : MonoBehaviour
     static public float weapon;
     public int startingWeapon = 0;
 
-    public GameObject projectileObject;
+    public float lightningCooldown = .8f;
+    public float lightningProjectileSpeed = 20f;
+    public GameObject lightningProjectileObject;
+
+    public float fireCooldown = .2f;
+    public float fireProjectileSpeed = 7f;
+    public GameObject fireProjectileObject;
+
+    public float iceCooldown = 1.5f;
+    public float iceProjectileSpeed = 80f;
+    public GameObject iceProjectileObject;
+
     public Transform fireProjectileFromLocation;
     public Transform playerPosition;
 
@@ -27,36 +38,60 @@ public class PlayerWeaponFire : MonoBehaviour
   
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && shotCooldown <= 0)
+        //......................................Cooldown
+        shotCooldown = shotCooldown - Time.deltaTime;
+
+        //......................................Shoot Projectile
+        if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
-            //spawn projectile
-            GameObject newProjectile = Instantiate(projectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
-
-            //calculate shoot angle
-            Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
-            //send projectile off
-            newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, 5f, 500f);
-            
-
             //LIGHTNING
             if(weapon == 1)
             {
+                //spawn projectile
+                GameObject newProjectile = Instantiate(lightningProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
+                //calculate shoot angle
+                Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
+                //send projectile off
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, lightningProjectileSpeed, 500f);
+                //set cooldown
+                shotCooldown = lightningCooldown;
             }
 
             //FIRE
             if(weapon == 2)
             {
+                //spawn projectile
+                GameObject newProjectile = Instantiate(fireProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
+                //calculate shoot angle
+                Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
+                //send projectile off
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, fireProjectileSpeed, 500f);
+                //set cooldown
+                shotCooldown = fireCooldown;
             }
 
             //ICE
             if(weapon == 3)
             {
+                //spawn projectile
+                GameObject newProjectile = Instantiate(iceProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
+                //calculate shoot angle
+                Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
+                //send projectile off
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f);
+                //set cooldown
+                shotCooldown = iceCooldown;
             }
+        } 
+    }
 
-
-        }
+    //......................................Change Projectile Type
+    public void ChangeElement(int element)
+    {
+        shotCooldown = .2f;
+        weapon = element;
     }
 }
