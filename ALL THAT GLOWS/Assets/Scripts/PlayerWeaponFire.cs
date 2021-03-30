@@ -35,8 +35,8 @@ public class PlayerWeaponFire : MonoBehaviour
             //calculate shoot angle
             Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
             //send projectile off
-            newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, 5);
-            Destroy(newProjectile, 5f);
+            newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, 5f, 500f);
+            
 
             //LIGHTNING
             if(weapon == 1)
