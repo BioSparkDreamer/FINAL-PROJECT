@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2443789855683144978}
   - component: {fileID: 719999088546892964}
   - component: {fileID: 5099608435180260845}
+  - component: {fileID: 1937147558}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,22 @@ MonoBehaviour:
   defaultMoveSpeed: 5
   startMovement: 1
   rotateSpeed: 2
+--- !u!114 &1937147558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406795385606129754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985a206a19a690a4aad0c249191bfc59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultHealth: 100
+  mismatchElementResistPercentage: 50
+  matchElementWeaknessPercentage: 100
+  defaultElement0_None1_Lightning2_Fire3_Ice: 0
 --- !u!1 &2860365339083476420
 GameObject:
   m_ObjectHideFlags: 0

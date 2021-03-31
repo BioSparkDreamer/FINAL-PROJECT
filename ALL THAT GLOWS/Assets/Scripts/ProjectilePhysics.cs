@@ -7,6 +7,8 @@ public class ProjectilePhysics : MonoBehaviour
     //...................................................................Variables
     public GameObject particleMissedProjectile;
     private float timeToSelfDestruct = 5f;
+    private int collissionDamage;
+    private int collissionElement;
 
     private void Update()
     {
@@ -21,7 +23,13 @@ public class ProjectilePhysics : MonoBehaviour
     //...................................................................Collision
     private void OnCollisionEnter(Collision collision)
     {
-        MissEffect(); 
+        //if enemy, do damage
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealthDamage>().EnemyTakeDamage(collissionDamage, collissionElement);
+        }
+        //play particle, remove projectile
+        MissEffect();
     }
 
     //...................................................................Hit non-enemy or explode in air
@@ -35,7 +43,7 @@ public class ProjectilePhysics : MonoBehaviour
     }
 
     //...................................................................Move Projectile on creation
-    public void ProjectileProperties(Vector3 shootDirection, float shootSpeed, float duration)
+    public void ProjectileProperties(Vector3 shootDirection, float shootSpeed, float duration, int damage, int elementType)
     {
         Rigidbody rigidBody = GetComponent<Rigidbody>();
 
@@ -44,5 +52,9 @@ public class ProjectilePhysics : MonoBehaviour
 
         //SHOULD change how long projectile lasts, currently doesn't???
         timeToSelfDestruct = duration;
+
+        //set damage of projectile
+        collissionDamage = damage;
+        collissionElement = elementType;
     }
 }

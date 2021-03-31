@@ -11,14 +11,17 @@ public class PlayerWeaponFire : MonoBehaviour
 
     public float lightningCooldown = .8f;
     public float lightningProjectileSpeed = 20f;
+    public int lightningProjectileDamage = 40;
     public GameObject lightningProjectileObject;
 
     public float fireCooldown = .2f;
     public float fireProjectileSpeed = 7f;
+    public int fireProjectileDamage = 20;
     public GameObject fireProjectileObject;
 
     public float iceCooldown = 1.5f;
     public float iceProjectileSpeed = 80f;
+    public int iceProjectileDamage = 50;
     public GameObject iceProjectileObject;
 
     public Transform fireProjectileFromLocation;
@@ -53,7 +56,7 @@ public class PlayerWeaponFire : MonoBehaviour
                 //calculate shoot angle
                 Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
                 //send projectile off
-                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, lightningProjectileSpeed, 500f);
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, lightningProjectileSpeed, 500f, lightningProjectileDamage, 1);
                 //set cooldown
                 shotCooldown = lightningCooldown;
             }
@@ -67,7 +70,7 @@ public class PlayerWeaponFire : MonoBehaviour
                 //calculate shoot angle
                 Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
                 //send projectile off
-                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, fireProjectileSpeed, 500f);
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, fireProjectileSpeed, 500f, fireProjectileDamage, 2);
                 //set cooldown
                 shotCooldown = fireCooldown;
             }
@@ -81,7 +84,7 @@ public class PlayerWeaponFire : MonoBehaviour
                 //calculate shoot angle
                 Vector3 shootDirection = (fireProjectileFromLocation.position - playerPosition.position);
                 //send projectile off
-                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f);
+                newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f, iceProjectileDamage, 3);
                 //set cooldown
                 shotCooldown = iceCooldown;
             }
