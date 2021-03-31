@@ -25,24 +25,19 @@ public class EnemyHealthDamage : MonoBehaviour
         }
     }
 
-    
-    void Update()
-    {
-        
-    }
     //.................................Function take damage
     public void EnemyTakeDamage(int damageAmmount, int elementType)
     {
         //damage from matching element
         if (currentElement == elementType && currentElement != 0)
         {
-            currentHealth -= damageAmmount / 100 * matchElementWeaknessPercentage;
+            currentHealth -=  damageAmmount * matchElementWeaknessPercentage / 100;
         }
 
         //damage from mismatched element
         if (currentElement != elementType && currentElement != 0)
         {
-            currentHealth -= damageAmmount / 100 * mismatchElementResistPercentage;
+            currentHealth -=  damageAmmount * mismatchElementResistPercentage / 100;
         }
 
         //damage if enemy has no element
