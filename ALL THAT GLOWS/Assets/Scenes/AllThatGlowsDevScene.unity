@@ -1800,6 +1800,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: startingWeapon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: lightningProjectileSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: iceProjectileSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: fireProjectileSpeed
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: lightningProjectileDamage
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: lightningCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088189917761573770, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: fireCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7088189917761573878, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
       propertyPath: m_Name
