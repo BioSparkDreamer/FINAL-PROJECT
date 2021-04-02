@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyHealthDamage : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class EnemyHealthDamage : MonoBehaviour
 
     public int defaultElement0_None1_Lightning2_Fire3_Ice = 0;
     private int currentElement;
-
-    
+    EnemyHealthBar e;
+    public Action onEnemyDeath;
     void Start()
     {
+        GameObject enemyHealthBarObject = GameObject.FindWithTag("Enemy");
+        e = enemyHealthBarObject.GetComponent<EnemyHealthBar>();
         //.................................Set default "backup" values
         if (currentHealth == 0)
         {
@@ -50,6 +53,7 @@ public class EnemyHealthDamage : MonoBehaviour
         //destroy if health reaches 0
         if (currentHealth <= 0)
         {
+            e.EnemyKill();
             Destroy(gameObject);
         }
     }
