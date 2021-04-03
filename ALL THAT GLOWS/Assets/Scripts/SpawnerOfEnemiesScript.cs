@@ -12,6 +12,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
     public GameObject fireEnemyPrefab;
     public GameObject iceEnemyPrefab;
     private int enemyType = 0;
+    private int enemyAmount = 0;
     
     void Update()
     {
@@ -26,21 +27,25 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             if (enemyType == 3)
             {
                 Instantiate(iceEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                enemyAmount ++;
             }
 
             if (enemyType == 2)
             {
                 Instantiate(fireEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                enemyAmount ++;
             }
 
             if (enemyType == 1)
             {
                 Instantiate(lightningEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                enemyAmount ++;
             }
 
             if (enemyType == 0)
             {
                 Instantiate(normalEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                enemyAmount ++;
             }
 
             enemyType += 1;
@@ -48,6 +53,10 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             if (enemyType == 4)
             {
                 enemyType = 0;
+            }
+            if (enemyAmount == 10)
+            {
+                Destroy(gameObject);
             }
         }
     }
