@@ -81,7 +81,7 @@ MonoBehaviour:
   - {fileID: 6730927258876719415, guid: 2c84ae49eb39a8149b482031ad929a18, type: 3}
   - {fileID: 5429582380662865307, guid: 3d1efd63f6274e2439f5dacf0fd5b953, type: 3}
   - {fileID: 806212349261968603, guid: 48e7a5a0ed9ae85418129e07d9d1768b, type: 3}
-  defaultMoveSpeed: 3
+  defaultMoveSpeed: 10
   startMovement: 1
   rotateSpeed: 2
 --- !u!114 &1937147558
