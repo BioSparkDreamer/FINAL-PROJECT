@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 395109659004187828}
   m_Layer: 5
   m_Name: EnemyHealthBar
-  m_TagString: Untagged
+  m_TagString: HBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -261,6 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1935c50d333064bbba52a0f2904294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   currentEnemyHealth: 0
   healthBar: {fileID: 4374716691078559657}

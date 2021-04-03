@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 10;
     public int currentEnemyHealth;
     //Destroy enemies when they reach this object
     public HealthBar healthBar;
