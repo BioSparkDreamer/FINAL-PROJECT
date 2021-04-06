@@ -53,41 +53,46 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
         //track time
         timer = timer + Time.deltaTime;
 
-        //....................................Spawn wave at delay time
+        //....................................Spawn 'wave' at delay time
         if (timer >= waveDelayBeforeWave[indexDelayBeforeWaves] && waveIsSpawning == false)
         {
             timer = 0;
             waveIsSpawning = true;
         }
 
-        //....................................Spawn enemy inside wave at delay time
+        //....................................Spawn enemy inside 'wave' at delay time
         if (timer >= delayInsideWave && waveIsSpawning == true)
         {
             timer = 0;
             enemyAmount++;
             enemyAmountInWave++;
+            GameObject prefabToSpawn = normalEnemyPrefab;
 
-            //....................................Spawn enemy of type
+            //....................................Set enemy type
             if (waveEnemyElementToSpawn[indexEnemyElement] == 0)
             {
-                GameObject newEnemy = Instantiate(normalEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
-
+                prefabToSpawn = normalEnemyPrefab;
             }
             if (waveEnemyElementToSpawn[indexEnemyElement] == 1)
             {
-                Instantiate(lightningEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                prefabToSpawn = lightningEnemyPrefab;
             }
             if (waveEnemyElementToSpawn[indexEnemyElement] == 2)
             {
-                Instantiate(fireEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                prefabToSpawn = fireEnemyPrefab;
             }
             if (waveEnemyElementToSpawn[indexEnemyElement] == 3)
             {
-                Instantiate(iceEnemyPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                prefabToSpawn = iceEnemyPrefab;
             }
 
+            //....................................Spawn enemy
+            GameObject newEnemy = Instantiate(prefabToSpawn, gameObject.transform.position, gameObject.transform.rotation);
 
-            //....................................Turn off wave when limit reached, go to next wave in arrays
+            //....................................Give spawned unit movement orders
+            newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[waveRouteToTake[indexRouteToTake]]);
+
+            //....................................Turn off 'wave' when limit reached, go to next 'wave' in arrays
             if (enemyAmountInWave >= waveNumberOfEnemies[indexNumberOfEnemies])
             {
                 enemyAmountInWave = 0;

@@ -17,6 +17,8 @@ public class EnemyMoveToWaypoints : MonoBehaviour
     int waypointIndex = 0;
     private WaypointAdjuster waypointAdjuster;
 
+    private GameObject[] newRoute;
+
     private float moveSpeed;
     private float waitTime = 0;
 
@@ -52,7 +54,7 @@ public class EnemyMoveToWaypoints : MonoBehaviour
                 {
                     waypointIndex = waypointIndex + 1;
                     //check if it has a WaypointAdjuster script
-                    CheckWaypoint();
+                    //CheckWaypoint(); (NOT USING!)
                 }
                 //...............................................Turn off movement at end of array
                 else
@@ -119,6 +121,34 @@ public class EnemyMoveToWaypoints : MonoBehaviour
 
         // Calculate a rotation a step closer to the target and applies rotation to this object
         transform.rotation = Quaternion.LookRotation(newDirection);
+    }
+
+
+    //...............................................When spawned, take movement orders
+    public void OnCreationWaypoints(GameObject route)
+    {
+        if (route != null)
+        {
+            
+            newRoute = route.GetComponent<EnemyMovementPath>().wayPoints;
+            //System.Array.Copy(newRoute, route.GetComponent<EnemyMovementPath>().wayPoints, 1);
+
+            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.name);
+            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.GetComponent<EnemyMovementPath>().name);
+            print("Adding " + newRoute.Length + " waypoints");
+            print("Adding " + route.GetComponent<EnemyMovementPath>().wayPoints.Length + " waypoints");
+
+            //change passed array into local array
+            for (int i = 0; i < newRoute.Length; i++)
+            {
+                print("Waypoint added");
+                waypoint[i] = newRoute[i].transform;
+            }
+        }
+        else
+        {
+            print("ENEMY SPAWN: Error! No route detected, using default movement");
+        }
     }
 
 }
