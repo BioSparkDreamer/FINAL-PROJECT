@@ -8,17 +8,11 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
     private float timer = 0;
 
-        [Header ("Default Spawn Value (may remove)")]
-    public float spawnRate = 5f;
-
         [Header ("Put models to spawn here")]
     public GameObject normalEnemyPrefab;
     public GameObject lightningEnemyPrefab;
     public GameObject fireEnemyPrefab;
     public GameObject iceEnemyPrefab;
-
-    private int enemyType = 0;
-    private int enemyAmount = 0;
 
         [Header("GameObjects with 'EnemyMovementPaths' go here")]
         [Tooltip("This one needs a GameObject with the 'EnemyMovementPath' Script attached.")]
@@ -42,9 +36,13 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
     private int indexDelayBeforeWaves = 0;
     private int enemyAmountInWave;
     private bool waveIsSpawning = false;
+    private int totalWaves = 0;
+    private int currentWaves = 0;
 
     private void Start()
     {
+        //find which "wave" array has biggest ammount of values, makes it the wave total
+        totalWaves = Mathf.Max(Mathf.Max(Mathf.Max(waveEnemyElementToSpawn.Length, waveRouteToTake.Length), waveNumberOfEnemies.Length), waveDelayBeforeWave.Length);
         
     }
 
@@ -54,7 +52,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
         timer = timer + Time.deltaTime;
 
         //....................................Spawn 'wave' at delay time
-        if (timer >= waveDelayBeforeWave[indexDelayBeforeWaves] && waveIsSpawning == false)
+        if (timer >= waveDelayBeforeWave[indexDelayBeforeWaves] && waveIsSpawning == false && currentWaves < totalWaves)
         {
             timer = 0;
             waveIsSpawning = true;
@@ -64,7 +62,6 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
         if (timer >= delayInsideWave && waveIsSpawning == true)
         {
             timer = 0;
-            enemyAmount++;
             enemyAmountInWave++;
             GameObject prefabToSpawn = normalEnemyPrefab;
 
@@ -95,14 +92,48 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             //....................................Turn off 'wave' when limit reached, go to next 'wave' in arrays
             if (enemyAmountInWave >= waveNumberOfEnemies[indexNumberOfEnemies])
             {
-                enemyAmountInWave = 0;
-
                 waveIsSpawning = false;
 
-                indexDelayBeforeWaves++;
-                indexEnemyElement++;
-                indexNumberOfEnemies++;
-                indexRouteToTake++;
+                enemyAmountInWave = 0;
+
+                currentWaves++;
+
+                //cycle wave indexes; this way, if they have less actions than the max number of waves, they start from the top again
+                if (indexDelayBeforeWaves + 1 >= waveDelayBeforeWave.Length)
+                {
+                    indexDelayBeforeWaves = 0;
+                }
+                else
+                {
+                    indexDelayBeforeWaves++;
+                }
+
+                if (indexEnemyElement + 1 >= waveEnemyElementToSpawn.Length)
+                {
+                    indexEnemyElement = 0;
+                }
+                else
+                {
+                    indexEnemyElement++;
+                }
+
+                if (indexNumberOfEnemies + 1 >= waveNumberOfEnemies.Length)
+                {
+                    indexNumberOfEnemies = 0;
+                }
+                else
+                {
+                    indexNumberOfEnemies++;
+                }
+
+                if (indexRouteToTake + 1 >= waveRouteToTake.Length)
+                {
+                    indexRouteToTake = 0;
+                }
+                else
+                {
+                    indexRouteToTake++;
+                }   
             }
         }
     }

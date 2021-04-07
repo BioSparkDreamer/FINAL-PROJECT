@@ -133,15 +133,11 @@ public class EnemyMoveToWaypoints : MonoBehaviour
             newRoute = route.GetComponent<EnemyMovementPath>().wayPoints;
             //System.Array.Copy(newRoute, route.GetComponent<EnemyMovementPath>().wayPoints, 1);
 
-            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.name);
-            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.GetComponent<EnemyMovementPath>().name);
-            print("Adding " + newRoute.Length + " waypoints");
-            print("Adding " + route.GetComponent<EnemyMovementPath>().wayPoints.Length + " waypoints");
+            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.name + ". Adding " + newRoute.Length + " waypoints.");
 
             //change passed array into local array
             for (int i = 0; i < newRoute.Length; i++)
             {
-                print("Waypoint added");
                 waypoint[i] = newRoute[i].transform;
             }
         }

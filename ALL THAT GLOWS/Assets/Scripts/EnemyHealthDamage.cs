@@ -57,10 +57,4 @@ public class EnemyHealthDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    //.................................Function to add values as created
-    public void OnCreationValues(int health)
-    {
-        currentHealth = health;
-    }
 }
