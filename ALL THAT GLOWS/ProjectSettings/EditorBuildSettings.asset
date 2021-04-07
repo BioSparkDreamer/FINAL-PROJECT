@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 84ca4856d8a5b2d458589f48e9d5f5c3
+  - enabled: 1
+    path: Assets/Scenes/About.unity
+    guid: d0e61126c27dd594c946ab8c0e55100a
+  - enabled: 1
+    path: Assets/Scenes/AllThatGlowsDevScene.unity
+    guid: eac0c9fbf316bc546a3d29d427efd519
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: e845747e15aa39249915e07575867415
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 8541597375d706a4584bfd85aec42b98
   m_configObjects: {}
