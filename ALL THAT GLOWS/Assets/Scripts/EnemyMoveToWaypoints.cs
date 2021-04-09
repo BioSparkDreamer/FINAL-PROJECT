@@ -44,6 +44,8 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         //.............................................Turn on movement
         if (startMovement == true)
         {
+            //Put animation for walking here
+
             //check if current destination reached on x/z axis
             waypointLocationCheck = waypoint[waypointIndex].transform.position;
             waypointLocationCheck.y = transform.position.y;

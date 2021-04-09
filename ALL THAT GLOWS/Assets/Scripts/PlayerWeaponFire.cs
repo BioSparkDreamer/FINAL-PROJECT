@@ -47,6 +47,8 @@ public class PlayerWeaponFire : MonoBehaviour
         //......................................Shoot Projectile
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
+            //Put animation for staff firing here
+
             //LIGHTNING
             if(weapon == 1)
             {
