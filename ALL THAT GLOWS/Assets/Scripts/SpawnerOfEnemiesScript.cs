@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnerOfEnemiesScript : MonoBehaviour
 {
@@ -134,6 +135,12 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                 {
                     indexRouteToTake++;
                 }   
+            }
+
+            //Win condition <---- might not be perfect but from my wuick understanding of this code it should work
+            if(currentWaves > totalWaves)
+            {
+                SceneManager.LoadScene(3);
             }
         }
     }

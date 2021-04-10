@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+//Scenes
+//Main 0  About 1  DevScene 2  Win 3  Lose 4  Options 5
 
 
 // =================NOTE=====================
@@ -69,5 +73,13 @@ public class PlayerMovement : MonoBehaviour
         //because that's just how physics works man
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Bad Ground"))
+        {
+            SceneManager.LoadScene(6);
+        }
     }
 }

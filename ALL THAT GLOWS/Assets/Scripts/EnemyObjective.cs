@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyObjective : MonoBehaviour
 {
     public int maxHealth = 5;
     public int currentHealth;
     EnemyHealthBar e;
+
     //Destroy enemies when they reach this object
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,6 +32,7 @@ public class EnemyObjective : MonoBehaviour
         if(currentHealth == 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(6);
         }
     }
     void TakeDamage(int damage)
