@@ -29,13 +29,14 @@ public class PlayerWeaponFire : MonoBehaviour
 
     private float shotCooldown = 0;
 
-
+    Animator anim;
    
     void Start()
     {
         //weapons: 0Unarmed - 1Lightning - 2Fire - 3Ice
         weapon = startingWeapon;
-        
+
+        anim = GetComponent<Animator>();
     }
 
   
@@ -48,6 +49,7 @@ public class PlayerWeaponFire : MonoBehaviour
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
             //Put animation for staff firing here
+            anim.SetInteger("State", 1);
 
             //LIGHTNING
             if(weapon == 1)

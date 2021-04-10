@@ -1,20 +1,17 @@
 fileFormatVersion: 2
-guid: 5203cc398d170e241aed056a88b97fd1
+guid: f16aa0cb91e232046b3819aec72b4c68
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: -6577239125701115339
-    second: Flame|Fire StaffAction
+      74: 2860396734822241692
+    second: Staff|Shader NodetreeAction
   - first:
-      74: 1992387948665862987
-    second: Flame|FlameAction
+      74: -6441077849784766451
+    second: Staff|Shader NodetreeAction.004
   - first:
-      74: -846985018989802031
-    second: Fire Staff|Fire StaffAction
-  - first:
-      74: -6906595443029240071
-    second: Fire Staff|FlameAction
+      74: 8747574023564889705
+    second: Staff|StaffAction
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -1,20 +1,14 @@
 fileFormatVersion: 2
-guid: 6b04f82766310e54c9184113519e4934
+guid: a3f4c3759783f65448e7faf6d5488a2d
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: -8512954243448499671
-    second: Crystal|CrystalAction
+      74: -846985018989802031
+    second: Fire Staff|Fire StaffAction
   - first:
-      74: -2632324630530434174
-    second: Crystal|Ice StaffAction.001
-  - first:
-      74: -819625183585932427
-    second: Ice Staff|CrystalAction
-  - first:
-      74: -3390263590411510581
-    second: Ice Staff|Ice StaffAction.001
+      74: -6505178561607774156
+    second: Fire Staff|TextureAction
   externalObjects: {}
   materials:
     importMaterials: 1
