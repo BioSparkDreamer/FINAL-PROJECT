@@ -17,6 +17,7 @@ public class EnemyObjective : MonoBehaviour
             Destroy(collision.gameObject);
             TakeDamage(1);
             e.EnemyKill();
+            WinCondition.totalEnemiesRemovedSoFar++;
         }
     }
     public HealthBar healthBar;

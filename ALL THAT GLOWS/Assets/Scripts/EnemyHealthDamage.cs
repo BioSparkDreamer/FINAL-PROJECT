@@ -20,6 +20,7 @@ public class EnemyHealthDamage : MonoBehaviour
     {
         GameObject enemyHealthBarObject = GameObject.FindWithTag("HBar");
         e = enemyHealthBarObject.GetComponent<EnemyHealthBar>();
+
         //.................................Set default "backup" values
         if (currentHealth == 0)
         {
@@ -54,6 +55,8 @@ public class EnemyHealthDamage : MonoBehaviour
         if (currentHealth <= 0)
         {
             e.EnemyKill();
+
+            WinCondition.totalEnemiesRemovedSoFar++;
             Destroy(gameObject);
         }
     }
