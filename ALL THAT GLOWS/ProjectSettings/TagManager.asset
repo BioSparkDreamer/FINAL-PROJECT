@@ -8,6 +8,7 @@ TagManager:
   - ElementalPool
   - Enemy
   - HBar
+  - Pause Menu
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class EnemyHealthBar : MonoBehaviour
     public HealthBar healthBar;
     void Start()
     {
-        currentEnemyHealth = maxHealth;
+        currentEnemyHealth = 0;
         healthBar.SetMaxHealth(maxHealth);
     }
     void Update()
@@ -21,7 +21,7 @@ public class EnemyHealthBar : MonoBehaviour
     }
     void EnemyTakeDamage(int damage)
     {
-        currentEnemyHealth -= damage;
+        currentEnemyHealth += damage;
         healthBar.SetHealth(currentEnemyHealth);
     }
     public void EnemyKill()
