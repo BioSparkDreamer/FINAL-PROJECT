@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ElementalPoolControl : MonoBehaviour
 {
+    [Header("What element to switch a player who touches this to")]
+    [Tooltip("0=nothing, 1=lightning, 2=fire, 3=ice")]
     public int element1_Lightning2_Fire3_Ice = 1;
 
+    [Header("The staff models (script auto-finds, no need to fill)")]
     public GameObject fire;
     public GameObject ice;
     public GameObject lightning;
@@ -21,6 +24,7 @@ public class ElementalPoolControl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //Change weapon damage type on PLayerWeaponFire script
             other.GetComponent<PlayerWeaponFire>().ChangeElement(element1_Lightning2_Fire3_Ice);
 
             //Conditionals to hide the other staffs when picking up one

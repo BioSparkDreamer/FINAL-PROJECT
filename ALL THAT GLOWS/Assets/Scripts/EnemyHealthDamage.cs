@@ -6,16 +6,20 @@ using System;
 public class EnemyHealthDamage : MonoBehaviour
 {
     //.................................Variables
+    [Header("The health of this enemy when spawned")]
     public int defaultHealth = 100;
     private int currentHealth = 0;
 
+    [Header("When hit by an attack, what % damage does this enemy take?")]
     public int mismatchElementResistPercentage = 50;
     public int matchElementWeaknessPercentage = 100;
 
+    [Header("What default element is this enemy? (overwritten by spawner)")]
     public int defaultElement0_None1_Lightning2_Fire3_Ice = 0;
     private int currentElement;
     EnemyHealthBar e;
     public Action onEnemyDeath;
+
     void Start()
     {
         GameObject enemyHealthBarObject = GameObject.FindWithTag("HBar");
