@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - HBar
   - Pause Menu
+  - Fire Staff
+  - Ice Staff
+  - Lightning Staff
+  - Bad Ground
   layers:
   - Default
   - TransparentFX
