@@ -48,12 +48,13 @@ public class PlayerWeaponFire : MonoBehaviour
         //......................................Shoot Projectile
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
-            //Put animation for staff firing here
-            anim.SetInteger("State", 1);
 
             //LIGHTNING
             if(weapon == 1)
             {
+                //Animation
+                anim.SetInteger("State", 1);
+
                 //spawn projectile
                 GameObject newProjectile = Instantiate(lightningProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
@@ -68,6 +69,9 @@ public class PlayerWeaponFire : MonoBehaviour
             //FIRE
             if(weapon == 2)
             {
+                //Animation
+                anim.SetInteger("State", 1);
+
                 //spawn projectile
                 GameObject newProjectile = Instantiate(fireProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
@@ -82,6 +86,9 @@ public class PlayerWeaponFire : MonoBehaviour
             //ICE
             if(weapon == 3)
             {
+                //Animation
+                anim.SetInteger("State", 1);
+
                 //spawn projectile
                 GameObject newProjectile = Instantiate(iceProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
 
