@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class SpawnerOfEnemiesScript : MonoBehaviour
 {
@@ -40,11 +40,23 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
     private int totalWaves = 0;
     private int currentWaves = 0;
 
+    EnemyHealthBar enemyHealthBarScript;
+
     private void Start()
     {
         //find which "wave" array has biggest ammount of values, makes it the wave total
         totalWaves = Mathf.Max(Mathf.Max(Mathf.Max(waveEnemyElementToSpawn.Length, waveRouteToTake.Length), waveNumberOfEnemies.Length), waveDelayBeforeWave.Length);
-        
+
+        //find total number of enemies that must be defeated for the "WinCondition" script
+        for (int i = 0; i < waveNumberOfEnemies.Length; i++)
+        {
+            WinCondition.totalEnemiesToRemoveToWin = WinCondition.totalEnemiesToRemoveToWin + waveNumberOfEnemies[i];
+        }
+
+        //set healthbar max to found total
+        print("Total enemies to be destroyed for win condition: " + WinCondition.totalEnemiesToRemoveToWin);
+        enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
+
     }
 
     void Update()
@@ -135,12 +147,6 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                 {
                     indexRouteToTake++;
                 }   
-            }
-
-            //Win condition <---- might not be perfect but from my wuick understanding of this code it should work
-            if(currentWaves > totalWaves)
-            {
-                SceneManager.LoadScene(3);
             }
         }
     }

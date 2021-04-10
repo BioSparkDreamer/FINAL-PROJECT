@@ -7,11 +7,11 @@ public class EnemyHealthBar : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentEnemyHealth;
-    //Destroy enemies when they reach this object
     public HealthBar healthBar;
     void Start()
     {
         currentEnemyHealth = 0;
+        
         healthBar.SetMaxHealth(maxHealth);
     }
     void Update()

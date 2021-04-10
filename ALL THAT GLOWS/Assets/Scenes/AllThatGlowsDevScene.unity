@@ -2702,6 +2702,11 @@ PrefabInstance:
       propertyPath: waveRouteToTake.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7843198094753381254, guid: ca4e67f440b8b7947a551d6a18b54070,
+        type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[4]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9013376316943340533, guid: ca4e67f440b8b7947a551d6a18b54070,
         type: 3}
       propertyPath: m_Name
