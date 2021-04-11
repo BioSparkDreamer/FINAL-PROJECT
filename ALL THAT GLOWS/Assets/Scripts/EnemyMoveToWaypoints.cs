@@ -13,6 +13,7 @@ public class EnemyMoveToWaypoints : MonoBehaviour
 
 {
     //.............................................Waypoint Variables
+    [Header("Set max number of waypoints - spawner can't add more than the number here (default 25)")]
     public Transform[] waypoint;
     int waypointIndex = 0;
     private WaypointAdjuster waypointAdjuster;
@@ -23,6 +24,7 @@ public class EnemyMoveToWaypoints : MonoBehaviour
     private float waitTime = 0;
 
     //.............................................Movement Variables
+    [Header("Move speed and turn speed while moving")]
     public float defaultMoveSpeed = 5f;
     public bool startMovement = true;
     private Vector3 waypointLocationCheck;

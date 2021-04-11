@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8085142957886567894}
   - component: {fileID: 2207022013989641524}
   m_Layer: 0
-  m_Name: Waypoint
+  m_Name: Waypoint Generic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,5 +91,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad31b77135fb7fb46b54198f1e583472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aproachSpeed: 3
+  aproachSpeed: 0
   waitThenCome: 0
