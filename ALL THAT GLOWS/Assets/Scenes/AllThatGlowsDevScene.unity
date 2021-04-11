@@ -2172,6 +2172,7 @@ GameObject:
   - component: {fileID: 735507711}
   - component: {fileID: 735507710}
   - component: {fileID: 735507709}
+  - component: {fileID: 735507713}
   m_Layer: 0
   m_Name: PoolTemple (2)
   m_TagString: Untagged
@@ -2271,6 +2272,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735507707}
+  m_Mesh: {fileID: -4355286039848048654, guid: ad5fcfed10aa0fb40a9afc7bcd0f706a, type: 3}
+--- !u!64 &735507713
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735507707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
   m_Mesh: {fileID: -4355286039848048654, guid: ad5fcfed10aa0fb40a9afc7bcd0f706a, type: 3}
 --- !u!1 &738959398
 GameObject:
@@ -4529,6 +4544,7 @@ GameObject:
   - component: {fileID: 1727948712}
   - component: {fileID: 1727948711}
   - component: {fileID: 1727948710}
+  - component: {fileID: 1727948714}
   m_Layer: 0
   m_Name: PoolTemple (1)
   m_TagString: Untagged
@@ -4628,6 +4644,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727948708}
+  m_Mesh: {fileID: -4355286039848048654, guid: ad5fcfed10aa0fb40a9afc7bcd0f706a, type: 3}
+--- !u!64 &1727948714
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727948708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
   m_Mesh: {fileID: -4355286039848048654, guid: ad5fcfed10aa0fb40a9afc7bcd0f706a, type: 3}
 --- !u!1001 &1737172262
 PrefabInstance:
