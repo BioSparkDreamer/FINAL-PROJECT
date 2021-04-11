@@ -32,8 +32,8 @@ public class EnemyObjective : MonoBehaviour
     {
         if(currentHealth == 0)
         {
+            SceneManager.LoadScene(4);
             Destroy(gameObject);
-            SceneManager.LoadScene(6);
         }
     }
     void TakeDamage(int damage)
