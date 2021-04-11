@@ -6238,7 +6238,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3535740347912460742}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08099106, y: 0.07553883, z: 0.064668745}
@@ -6540,12 +6540,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5015808724612602332, guid: 48b43cf81c73a064eb085a27ba297e30,
         type: 3}
+      propertyPath: wayPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015808724612602332, guid: 48b43cf81c73a064eb085a27ba297e30,
+        type: 3}
       propertyPath: wayPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 996795260}
+      objectReference: {fileID: 193546979}
     - target: {fileID: 5015808724612602332, guid: 48b43cf81c73a064eb085a27ba297e30,
         type: 3}
       propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1291753073}
+    - target: {fileID: 5015808724612602332, guid: 48b43cf81c73a064eb085a27ba297e30,
+        type: 3}
+      propertyPath: wayPoints.Array.data[2]
       value: 
       objectReference: {fileID: 660375834}
     - target: {fileID: 5015808724612602335, guid: 48b43cf81c73a064eb085a27ba297e30,
