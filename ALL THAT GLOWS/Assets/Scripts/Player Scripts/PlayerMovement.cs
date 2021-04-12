@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         //..............................................Jump
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
-            fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
+            Jump();
         }
         
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -74,6 +74,12 @@ public class PlayerMovement : MonoBehaviour
         fallVelocity.y = fallVelocity.y + gravity * Time.deltaTime;
         controller.Move(fallVelocity * Time.deltaTime);
     }
+
+    public void Jump()
+    {
+        fallVelocity.y = Mathf.Sqrt(jumpStrength * -2f * gravity);
+    }
+    
 
     public void OnCollisionEnter(Collision collision)
     {
