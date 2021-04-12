@@ -8,16 +8,18 @@ public class ElementalPoolControl : MonoBehaviour
     [Tooltip("0=nothing, 1=lightning, 2=fire, 3=ice")]
     public int element1_Lightning2_Fire3_Ice = 1;
 
-    [Header("The staff models (script auto-finds, no need to fill)")]
+    [Header("This script also controls the staff models (put the models here)")]
     public GameObject fire;
     public GameObject ice;
     public GameObject lightning;
+    
 
     void Start()
     {
-        fire = GameObject.FindGameObjectWithTag("Fire Staff");
-        ice = GameObject.FindGameObjectWithTag("Ice Staff");
-        lightning = GameObject.FindGameObjectWithTag("Lightning Staff");
+        //NOTE FROM MIKE: Removed these because they were keeping us from disabling the staffs on start
+        //fire = GameObject.FindGameObjectWithTag("Fire Staff");
+        //ice = GameObject.FindGameObjectWithTag("Ice Staff");
+        //lightning = GameObject.FindGameObjectWithTag("Lightning Staff");
     }
 
     private void OnTriggerEnter(Collider other)

@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// ================= TO USE: ===================
-// While "startMovement" is true, this script will run. It will turn it off
-// at the end. In the unity inspector, you can set any number of waypoints that
-// you want the object this script is attached to to move towards, in order.
-// If you attach the "WaypointAdjuster" script to those objects, you can modify
-// how this object will move towards them individually.
+
 public class EnemyMoveToWaypoints : MonoBehaviour
 
 {
