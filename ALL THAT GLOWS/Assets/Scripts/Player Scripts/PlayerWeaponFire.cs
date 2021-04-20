@@ -39,7 +39,7 @@ public class PlayerWeaponFire : MonoBehaviour
 
     private float shotCooldown = 0;
 
-    Animator anim;
+    public Animator anim;
    
     void Start()
     {
@@ -58,6 +58,8 @@ public class PlayerWeaponFire : MonoBehaviour
         //......................................Shoot Projectile
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
+            //Animation
+            anim.SetInteger("State", 1);
 
             //LIGHTNING
             if(weapon == 1)
@@ -71,9 +73,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, lightningProjectileSpeed, 500f, lightningProjectileDamage, 1);
                 //set cooldown
                 shotCooldown = lightningCooldown;
-
-                //Animation
-                anim.SetInteger("State", 1);
             }
 
             //FIRE
@@ -88,9 +87,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, fireProjectileSpeed, 500f, fireProjectileDamage, 2);
                 //set cooldown
                 shotCooldown = fireCooldown;
-
-                //Animation
-                anim.SetInteger("State", 1);
             }
 
             //ICE
@@ -105,9 +101,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f, iceProjectileDamage, 3);
                 //set cooldown
                 shotCooldown = iceCooldown;
-
-                //Animation
-                anim.SetInteger("State", 1);
             }
         } 
     }

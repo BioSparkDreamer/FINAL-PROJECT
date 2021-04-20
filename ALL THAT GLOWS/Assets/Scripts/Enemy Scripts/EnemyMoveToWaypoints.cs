@@ -25,11 +25,16 @@ public class EnemyMoveToWaypoints : MonoBehaviour
     private Vector3 waypointLocationCheck;
     public float rotateSpeed = 2f;
 
+    //.............................................Animation
+    public Animator anim;
+
 
 
     void Start()
     {
         //.............................................Instantiation
+        anim = GetComponent<Animator>();
+
         moveSpeed = defaultMoveSpeed;
         //checks first waypoint in array for a
         //script, adds its modifications if applicable
@@ -41,8 +46,6 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         //.............................................Turn on movement
         if (startMovement == true)
         {
-            //Put animation for walking here
-
             //check if current destination reached on x/z axis
             waypointLocationCheck = waypoint[waypointIndex].transform.position;
             waypointLocationCheck.y = transform.position.y;
@@ -94,12 +97,15 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         //Pause movement if there is a wait time
         if (waitTime > 0f)
         {
+
+            anim.SetBool("IsMoving", false);
             waitTime = waitTime - Time.deltaTime;
             return;
         }
         else
         {
-            //Move toward waypoint
+            //Move toward waypoint and animation declaration
+            anim.SetBool("IsMoving", true);
             transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
     }
