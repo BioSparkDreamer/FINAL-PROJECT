@@ -9,24 +9,25 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
     private float timer = 0;
 
-        [Header ("Put models to spawn here")]
+        [Header("Put models to spawn here")]
     public GameObject normalEnemyPrefab;
     public GameObject lightningEnemyPrefab;
     public GameObject fireEnemyPrefab;
     public GameObject iceEnemyPrefab;
 
-        [Header("GameObjects with 'EnemyMovementPaths' go here")]
+
+    [Header("GameObjects with 'EnemyMovementPaths' go here")]
         [Tooltip("This one needs a GameObject with the 'EnemyMovementPath' Script attached.")]
     public GameObject[] enemyMovementPathsObjects;
 
-        [Header ("These control waves of enemies.")]
+        [Header ("These control mini-waves of enemies.")]
         [Tooltip ("0=neutral; 1=lightning; 2=fire; 3=ice.")]
     public int[] waveEnemyElementToSpawn;
         [Tooltip ("Choose which path that you added above to use. Starts at 0.")]
     public int[] waveRouteToTake;
-        [Tooltip("How many in this wave of this type with this route to spawn")]
+        [Tooltip("How many in this mini-wave of this type with this route to spawn")]
     public int[] waveNumberOfEnemies;
-        [Tooltip("Delay before spawning this wave")]
+        [Tooltip("Delay before spawning this mini-wave")]
     public float[] waveDelayBeforeWave;
         [Tooltip("The delay between spawning inside a wave of enemies.")]
     public float delayInsideWave = .5f;
@@ -44,7 +45,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
     private void Start()
     {
-        //find which "wave" array has biggest ammount of values, makes it the wave total
+        //find which "mini-wave" array has biggest ammount of values, makes it the wave total
         totalWaves = Mathf.Max(Mathf.Max(Mathf.Max(waveEnemyElementToSpawn.Length, waveRouteToTake.Length), waveNumberOfEnemies.Length), waveDelayBeforeWave.Length);
 
         //find total number of enemies that must be defeated for the "WinCondition" script
