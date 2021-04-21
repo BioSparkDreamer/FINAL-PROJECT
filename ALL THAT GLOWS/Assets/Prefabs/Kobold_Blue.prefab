@@ -3210,9 +3210,10 @@ GameObject:
   - component: {fileID: 2748986490061584606}
   - component: {fileID: 4417261444560416715}
   - component: {fileID: 1007367039582607488}
+  - component: {fileID: 8067803542435637560}
   m_Layer: 0
   m_Name: Kobold_Blue
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3317,3 +3318,17 @@ MonoBehaviour:
   mismatchElementResistPercentage: 50
   matchElementWeaknessPercentage: 100
   defaultElement0_None1_Lightning2_Fire3_Ice: 3
+--- !u!136 &8067803542435637560
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148788575267301303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.004
+  m_Height: 0.014
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.006, z: 0.001}

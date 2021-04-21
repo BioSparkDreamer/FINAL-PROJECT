@@ -460,9 +460,10 @@ GameObject:
   - component: {fileID: 5250925562473194258}
   - component: {fileID: 1002147943567184420}
   - component: {fileID: 1571243767717548900}
+  - component: {fileID: 4013119525192458688}
   m_Layer: 0
   m_Name: Kobold_Red
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,6 +568,20 @@ MonoBehaviour:
   mismatchElementResistPercentage: 50
   matchElementWeaknessPercentage: 100
   defaultElement0_None1_Lightning2_Fire3_Ice: 2
+--- !u!136 &4013119525192458688
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156953290210671739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.004
+  m_Height: 0.014
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.006, z: 0.001}
 --- !u!1 &1312312186530538160
 GameObject:
   m_ObjectHideFlags: 0

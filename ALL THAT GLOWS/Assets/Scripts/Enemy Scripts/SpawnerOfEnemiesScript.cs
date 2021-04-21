@@ -215,6 +215,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             fullWaveIsSpawning = false;
             indexSingleWaveObject++;
             print("Next wave activated");
+            currentMiniWaves = 0;
 
             //reset mini-wave indexes
             indexDelayBeforeWaves = 0;
