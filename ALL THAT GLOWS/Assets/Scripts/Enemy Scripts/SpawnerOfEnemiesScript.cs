@@ -65,7 +65,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             }
 
             print("Total enemies to be destroyed this game: " + WinCondition.totalEnemiesToRemoveToWin);
-            enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
+            //enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
         }
 
         //set initial wave object
@@ -107,6 +107,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             print("Total enemies to be destroyed for this wave: " + enemiesToDefeatCurrentWave);
             int enemyDifference = enemyHealthBarScript.maxHealth - enemyHealthBarScript.currentEnemyHealth; //how many are left?
             enemyHealthBarScript.maxHealth = enemyDifference + enemiesToDefeatCurrentWave;
+            enemyHealthBarScript.NewMaxHealth(enemyHealthBarScript.maxHealth);
             enemyHealthBarScript.currentEnemyHealth = enemyDifference;
         }
 
