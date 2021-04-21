@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 0;
     public int currentEnemyHealth;
     public HealthBar healthBar;
     void Start()
@@ -27,6 +27,11 @@ public class EnemyHealthBar : MonoBehaviour
     public void EnemyKill()
     {
         EnemyTakeDamage(1);
-        Debug.Log("Working");
+    }
+
+    // function for new waves
+    public void NewMaxHealth(int newMax)
+    {
+        healthBar.SetMaxHealth(newMax);
     }
 }

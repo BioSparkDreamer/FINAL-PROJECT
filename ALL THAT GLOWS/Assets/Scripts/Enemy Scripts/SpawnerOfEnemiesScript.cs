@@ -9,54 +9,67 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
     private float timer = 0;
 
-        [Header ("Put models to spawn here")]
+        [Header("Put models to spawn here")]
     public GameObject normalEnemyPrefab;
     public GameObject lightningEnemyPrefab;
     public GameObject fireEnemyPrefab;
     public GameObject iceEnemyPrefab;
 
-        [Header("GameObjects with 'EnemyMovementPaths' go here")]
+
+    [Header("GameObjects with 'EnemyMovementPaths' go here")]
         [Tooltip("This one needs a GameObject with the 'EnemyMovementPath' Script attached.")]
     public GameObject[] enemyMovementPathsObjects;
 
-        [Header ("These control waves of enemies.")]
-        [Tooltip ("0=neutral; 1=lightning; 2=fire; 3=ice.")]
-    public int[] waveEnemyElementToSpawn;
-        [Tooltip ("Choose which path that you added above to use. Starts at 0.")]
-    public int[] waveRouteToTake;
-        [Tooltip("How many in this wave of this type with this route to spawn")]
-    public int[] waveNumberOfEnemies;
-        [Tooltip("Delay before spawning this wave")]
-    public float[] waveDelayBeforeWave;
-        [Tooltip("The delay between spawning inside a wave of enemies.")]
-    public float delayInsideWave = .5f;
+    private int indexEnemyMovementPathsObjects = 0;
+
+    [Header("GameObjects with 'SingleWaveObject' go here")]
+    [Tooltip("This one needs a GameObject with the 'SingleWaveObject' Script attached.")]
+    public GameObject[] singleWaveObjects;
+
+    private int indexSingleWaveObject = 0;
+
+    [Header("GameObjects with the location to spawn at go here")]
+    [Tooltip("Does not need a script attached.")]
+    public GameObject[] spawnerLocationObjects;
+
+    private int indexSpawnerLocationObjects = 0;
+
+    private bool fullWaveIsSpawning = false;
+    private SingleWaveObject currentWaveObjectReference;
 
     private int indexEnemyElement = 0;
-    private int indexRouteToTake = 0;
     private int indexNumberOfEnemies = 0;
     private int indexDelayBeforeWaves = 0;
-    private int enemyAmountInWave;
-    private bool waveIsSpawning = false;
-    private int totalWaves = 0;
-    private int currentWaves = 0;
+    private int enemyAmountInMiniWave;
+    private bool miniWaveIsSpawning = false;
+    private int totalMiniWaves = 0;
+    private int currentMiniWaves = 0;
+    private int enemiesToDefeatCurrentWave = 0;
+
+    [Header("Healthbar object with script goes here")]
+    public GameObject healthBar;
 
     EnemyHealthBar enemyHealthBarScript;
 
     private void Start()
     {
-        //find which "wave" array has biggest ammount of values, makes it the wave total
-        totalWaves = Mathf.Max(Mathf.Max(Mathf.Max(waveEnemyElementToSpawn.Length, waveRouteToTake.Length), waveNumberOfEnemies.Length), waveDelayBeforeWave.Length);
+        //get healthbar
+        enemyHealthBarScript = healthBar.GetComponent<EnemyHealthBar>();
 
         //find total number of enemies that must be defeated for the "WinCondition" script
-        for (int i = 0; i < waveNumberOfEnemies.Length; i++)
+        for (int j = 0; j < singleWaveObjects.Length; j++)
         {
-            WinCondition.totalEnemiesToRemoveToWin = WinCondition.totalEnemiesToRemoveToWin + waveNumberOfEnemies[i];
+            for (int i = 0; i < singleWaveObjects[j].GetComponent<SingleWaveObject>().waveNumberOfEnemies.Length; i++)
+            {
+                WinCondition.totalEnemiesToRemoveToWin = WinCondition.totalEnemiesToRemoveToWin + singleWaveObjects[j].GetComponent<SingleWaveObject>().waveNumberOfEnemies[i];
+            }
+
+            print("Total enemies to be destroyed this game: " + WinCondition.totalEnemiesToRemoveToWin);
+            //enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
         }
 
-        //set healthbar max to found total
-        print("Total enemies to be destroyed for win condition: " + WinCondition.totalEnemiesToRemoveToWin);
-        enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
-
+        //set initial wave object
+        currentWaveObjectReference = singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>();
     }
 
     void Update()
@@ -64,55 +77,90 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
         //track time
         timer = timer + Time.deltaTime;
 
-        //....................................Spawn 'wave' at delay time
-        if (timer >= waveDelayBeforeWave[indexDelayBeforeWaves] && waveIsSpawning == false && currentWaves < totalWaves)
+        //....................................Spawn 'full-wave' at delay time
+        if (timer >= currentWaveObjectReference.delayBeforeThisWave && fullWaveIsSpawning == false)
         {
             timer = 0;
-            waveIsSpawning = true;
+            fullWaveIsSpawning = true;
+
+            enemiesToDefeatCurrentWave = 0;
+
+            indexDelayBeforeWaves = 0;
+            indexEnemyElement = 0;
+            indexNumberOfEnemies = 0;
+            indexEnemyMovementPathsObjects = 0;
+
+
+            //get wave object reference
+            currentWaveObjectReference = singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>();
+
+            //set mini wave total from wave object
+            totalMiniWaves = currentWaveObjectReference.waveNumberOfEnemies.Length;
+
+            //find number of enemies to be defeated in wave for the healthbar
+            for (int i = 0; i < currentWaveObjectReference.waveNumberOfEnemies.Length; i++)
+            {
+                enemiesToDefeatCurrentWave = enemiesToDefeatCurrentWave + currentWaveObjectReference.waveNumberOfEnemies[i];
+            }
+
+            //set healthbar max to found total
+            print("Total enemies to be destroyed for this wave: " + enemiesToDefeatCurrentWave);
+            int enemyDifference = enemyHealthBarScript.maxHealth - enemyHealthBarScript.currentEnemyHealth; //how many are left?
+            enemyHealthBarScript.maxHealth = enemyDifference + enemiesToDefeatCurrentWave;
+            enemyHealthBarScript.NewMaxHealth(enemyHealthBarScript.maxHealth);
+            enemyHealthBarScript.currentEnemyHealth = enemyDifference;
         }
 
-        //....................................Spawn enemy inside 'wave' at delay time
-        if (timer >= delayInsideWave && waveIsSpawning == true)
+        //....................................Spawn 'mini-wave' at delay time if full-wave is spawning
+        if (timer >= currentWaveObjectReference.waveDelayBeforeWave[indexDelayBeforeWaves] && miniWaveIsSpawning == false && fullWaveIsSpawning == true && currentMiniWaves < totalMiniWaves)
         {
             timer = 0;
-            enemyAmountInWave++;
+            miniWaveIsSpawning = true;
+        }
+
+        //....................................Spawn enemy inside 'mini-wave' at delay time
+        if (timer >= currentWaveObjectReference.delayInsideWave && miniWaveIsSpawning == true)
+        {
+            timer = 0;
+            enemyAmountInMiniWave++;
             GameObject prefabToSpawn = normalEnemyPrefab;
 
             //....................................Set enemy type
-            if (waveEnemyElementToSpawn[indexEnemyElement] == 0)
+            if (currentWaveObjectReference.waveEnemyElementToSpawn[indexEnemyElement] == 0)
             {
                 prefabToSpawn = normalEnemyPrefab;
             }
-            if (waveEnemyElementToSpawn[indexEnemyElement] == 1)
+            if (currentWaveObjectReference.waveEnemyElementToSpawn[indexEnemyElement] == 1)
             {
                 prefabToSpawn = lightningEnemyPrefab;
             }
-            if (waveEnemyElementToSpawn[indexEnemyElement] == 2)
+            if (currentWaveObjectReference.waveEnemyElementToSpawn[indexEnemyElement] == 2)
             {
                 prefabToSpawn = fireEnemyPrefab;
             }
-            if (waveEnemyElementToSpawn[indexEnemyElement] == 3)
+            if (currentWaveObjectReference.waveEnemyElementToSpawn[indexEnemyElement] == 3)
             {
                 prefabToSpawn = iceEnemyPrefab;
             }
 
-            //....................................Spawn enemy
-            GameObject newEnemy = Instantiate(prefabToSpawn, gameObject.transform.position, gameObject.transform.rotation);
+            //....................................Spawn enemy at a spawner location
+            GameObject newEnemy = Instantiate(prefabToSpawn, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.position, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.rotation);
 
             //....................................Give spawned unit movement orders
-            newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[waveRouteToTake[indexRouteToTake]]);
+            newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[currentWaveObjectReference.waveRouteToTake[indexEnemyMovementPathsObjects]]);
 
-            //....................................Turn off 'wave' when limit reached, go to next 'wave' in arrays
-            if (enemyAmountInWave >= waveNumberOfEnemies[indexNumberOfEnemies])
+            //....................................Turn off 'mini-wave' when limit reached, go to next 'mini-wave' in arrays
+            if (enemyAmountInMiniWave >= currentWaveObjectReference.waveNumberOfEnemies[indexNumberOfEnemies])
             {
-                waveIsSpawning = false;
+                miniWaveIsSpawning = false;
 
-                enemyAmountInWave = 0;
+                enemyAmountInMiniWave = 0;
 
-                currentWaves++;
+                currentMiniWaves++;
 
-                //cycle wave indexes; this way, if they have less actions than the max number of waves, they start from the top again
-                if (indexDelayBeforeWaves + 1 >= waveDelayBeforeWave.Length)
+
+                //cycle mini-wave indexes; this way, if they have less actions than the max number of mini-waves, they start from the top again
+                if (indexDelayBeforeWaves + 1 >= currentWaveObjectReference.waveDelayBeforeWave.Length)
                 {
                     indexDelayBeforeWaves = 0;
                 }
@@ -121,7 +169,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                     indexDelayBeforeWaves++;
                 }
 
-                if (indexEnemyElement + 1 >= waveEnemyElementToSpawn.Length)
+                if (indexEnemyElement + 1 >= currentWaveObjectReference.waveEnemyElementToSpawn.Length)
                 {
                     indexEnemyElement = 0;
                 }
@@ -130,7 +178,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                     indexEnemyElement++;
                 }
 
-                if (indexNumberOfEnemies + 1 >= waveNumberOfEnemies.Length)
+                if (indexNumberOfEnemies + 1 >= currentWaveObjectReference.waveNumberOfEnemies.Length)
                 {
                     indexNumberOfEnemies = 0;
                 }
@@ -139,15 +187,41 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                     indexNumberOfEnemies++;
                 }
 
-                if (indexRouteToTake + 1 >= waveRouteToTake.Length)
+                if (indexEnemyMovementPathsObjects + 1 >= currentWaveObjectReference.waveRouteToTake.Length)
                 {
-                    indexRouteToTake = 0;
+                    indexEnemyMovementPathsObjects = 0;
                 }
                 else
                 {
-                    indexRouteToTake++;
-                }   
+                    indexEnemyMovementPathsObjects++;
+                }
+
+                if (indexSpawnerLocationObjects + 1 >= currentWaveObjectReference.waveSpawnerToUse.Length)
+                {
+                    indexSpawnerLocationObjects = 0;
+                }
+                else
+                {
+                    indexSpawnerLocationObjects++;
+                }
             }
+        }
+
+        //....................................Start next wave after finishing all mini-waves of this wave
+        if (currentMiniWaves == totalMiniWaves && fullWaveIsSpawning == true && indexSingleWaveObject + 1 < singleWaveObjects.Length)
+        {
+            timer = 0;
+            fullWaveIsSpawning = false;
+            indexSingleWaveObject++;
+            print("Next wave activated");
+            currentMiniWaves = 0;
+
+            //reset mini-wave indexes
+            indexDelayBeforeWaves = 0;
+            indexEnemyElement = 0;
+            indexNumberOfEnemies = 0;
+            indexEnemyMovementPathsObjects = 0;
+            indexSpawnerLocationObjects = 0;
         }
     }
 }
