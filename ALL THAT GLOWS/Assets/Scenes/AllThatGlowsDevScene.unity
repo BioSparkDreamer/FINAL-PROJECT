@@ -12581,6 +12581,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1074376696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 992603110651867045, guid: 250a3436393a62b40bf7e906e4c036f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3355203675155813880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1106900310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13308,8 +13314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeThisWave: 5
   waveEnemyElementToSpawn: 030000000100000002000000
-  waveSpawnerToUse: 000000000100000002000000
-  waveRouteToTake: 000000000000000000000000
+  waveSpawnerToUse: 000000000000000000000000
+  waveRouteToTake: 010000000200000000000000
   waveNumberOfEnemies: 040000000500000006000000
   waveDelayBeforeWave:
   - 2
@@ -19828,7 +19834,7 @@ MonoBehaviour:
   - {fileID: 1767971835}
   - {fileID: 1480095297}
   spawnerLocationObjects:
-  - {fileID: 1210184466}
+  - {fileID: 1074376696}
   - {fileID: 1210184466}
   - {fileID: 996471306}
   healthBar: {fileID: 267691607}
@@ -20360,17 +20366,17 @@ PrefabInstance:
     - target: {fileID: 992603110277079622, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Spawner 2 (right)
+      value: Enemy Spawner 1 (right)
       objectReference: {fileID: 0}
     - target: {fileID: 992603110651867045, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Spawner 1 (back)
+      value: Enemy Spawner 0 (back)
       objectReference: {fileID: 0}
     - target: {fileID: 992603110954025684, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Spawner 3 (left)
+      value: Enemy Spawner 2 (left)
       objectReference: {fileID: 0}
     - target: {fileID: 3355203674771967491, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
@@ -20461,6 +20467,16 @@ PrefabInstance:
         type: 3}
       propertyPath: waveNumberOfEnemies.Array.data[2]
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveRouteToTake.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveRouteToTake.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3355203674920514418, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}

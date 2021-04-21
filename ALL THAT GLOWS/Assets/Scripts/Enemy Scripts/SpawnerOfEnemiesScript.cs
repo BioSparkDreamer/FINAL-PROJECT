@@ -38,7 +38,6 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
     private SingleWaveObject currentWaveObjectReference;
 
     private int indexEnemyElement = 0;
-    private int indexRouteToTake = 0;
     private int indexNumberOfEnemies = 0;
     private int indexDelayBeforeWaves = 0;
     private int enemyAmountInMiniWave;
@@ -79,7 +78,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
         timer = timer + Time.deltaTime;
 
         //....................................Spawn 'full-wave' at delay time
-        if (timer >= singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>().delayBeforeThisWave && fullWaveIsSpawning == false)
+        if (timer >= currentWaveObjectReference.delayBeforeThisWave && fullWaveIsSpawning == false)
         {
             timer = 0;
             fullWaveIsSpawning = true;
@@ -89,7 +88,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             indexDelayBeforeWaves = 0;
             indexEnemyElement = 0;
             indexNumberOfEnemies = 0;
-            indexRouteToTake = 0;
+            indexEnemyMovementPathsObjects = 0;
 
 
             //get wave object reference
@@ -146,7 +145,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             GameObject newEnemy = Instantiate(prefabToSpawn, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.position, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.rotation);
 
             //....................................Give spawned unit movement orders
-            newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[currentWaveObjectReference.waveRouteToTake[indexRouteToTake]]);
+            newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[currentWaveObjectReference.waveRouteToTake[indexEnemyMovementPathsObjects]]);
 
             //....................................Turn off 'mini-wave' when limit reached, go to next 'mini-wave' in arrays
             if (enemyAmountInMiniWave >= currentWaveObjectReference.waveNumberOfEnemies[indexNumberOfEnemies])
@@ -156,6 +155,10 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                 enemyAmountInMiniWave = 0;
 
                 currentMiniWaves++;
+
+                
+                indexSpawnerLocationObjects++;
+
 
                 //cycle mini-wave indexes; this way, if they have less actions than the max number of mini-waves, they start from the top again
                 if (indexDelayBeforeWaves + 1 >= currentWaveObjectReference.waveDelayBeforeWave.Length)
@@ -185,15 +188,40 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                     indexNumberOfEnemies++;
                 }
 
-                if (indexRouteToTake + 1 >= currentWaveObjectReference.waveRouteToTake.Length)
+                if (indexEnemyMovementPathsObjects + 1 >= currentWaveObjectReference.waveRouteToTake.Length)
                 {
-                    indexRouteToTake = 0;
+                    indexEnemyMovementPathsObjects = 0;
                 }
                 else
                 {
-                    indexRouteToTake++;
-                }   
+                    indexEnemyMovementPathsObjects++;
+                }
+
+                if (indexSpawnerLocationObjects + 1 >= currentWaveObjectReference.waveSpawnerToUse.Length)
+                {
+                    indexSpawnerLocationObjects = 0;
+                }
+                else
+                {
+                    indexSpawnerLocationObjects++;
+                }
             }
+        }
+
+        //....................................Start next wave after finishing all mini-waves of this wave
+        if (currentMiniWaves == totalMiniWaves && fullWaveIsSpawning == true && indexSingleWaveObject + 1 < singleWaveObjects.Length)
+        {
+            timer = 0;
+            fullWaveIsSpawning = false;
+            indexSingleWaveObject++;
+            print("Next wave activated");
+
+            //reset mini-wave indexes
+            indexDelayBeforeWaves = 0;
+            indexEnemyElement = 0;
+            indexNumberOfEnemies = 0;
+            indexEnemyMovementPathsObjects = 0;
+            indexSpawnerLocationObjects = 0;
         }
     }
 }
