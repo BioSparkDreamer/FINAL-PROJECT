@@ -59,7 +59,7 @@ public class PlayerWeaponFire : MonoBehaviour
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
             //Animation
-            anim.SetInteger("State", 1);
+            //anim.SetInteger("State", 1);
 
             //LIGHTNING
             if(weapon == 1)

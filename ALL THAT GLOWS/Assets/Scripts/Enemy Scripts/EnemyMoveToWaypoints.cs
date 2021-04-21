@@ -98,14 +98,14 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         if (waitTime > 0f)
         {
 
-            anim.SetBool("IsMoving", false);
+            //anim.SetBool("IsMoving", false);
             waitTime = waitTime - Time.deltaTime;
             return;
         }
         else
         {
             //Move toward waypoint and animation declaration
-            anim.SetBool("IsMoving", true);
+            //anim.SetBool("IsMoving", true);
             transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
     }
