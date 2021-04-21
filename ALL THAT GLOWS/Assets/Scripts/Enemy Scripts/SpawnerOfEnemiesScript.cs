@@ -105,8 +105,9 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
             //set healthbar max to found total
             print("Total enemies to be destroyed for this wave: " + enemiesToDefeatCurrentWave);
-            enemyHealthBarScript.maxHealth = enemiesToDefeatCurrentWave;
-            enemyHealthBarScript.currentEnemyHealth = enemiesToDefeatCurrentWave;
+            int enemyDifference = enemyHealthBarScript.maxHealth - enemyHealthBarScript.currentEnemyHealth; //how many are left?
+            enemyHealthBarScript.maxHealth = enemyDifference + enemiesToDefeatCurrentWave;
+            enemyHealthBarScript.currentEnemyHealth = enemyDifference;
         }
 
         //....................................Spawn 'mini-wave' at delay time if full-wave is spawning
@@ -155,9 +156,6 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
                 enemyAmountInMiniWave = 0;
 
                 currentMiniWaves++;
-
-                
-                indexSpawnerLocationObjects++;
 
 
                 //cycle mini-wave indexes; this way, if they have less actions than the max number of mini-waves, they start from the top again
