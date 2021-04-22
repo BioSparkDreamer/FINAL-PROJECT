@@ -39,28 +39,21 @@ public class PlayerWeaponFire : MonoBehaviour
 
     private float shotCooldown = 0;
 
-    public Animator anim;
-   
     void Start()
     {
         //weapons: 0Unarmed - 1Lightning - 2Fire - 3Ice
         weapon = startingWeapon;
-
-        anim = GetComponent<Animator>();
     }
 
   
     void Update()
     {
-        //......................................Cooldown
+        //......................................aCooldown
         shotCooldown = shotCooldown - Time.deltaTime;
 
         //......................................Shoot Projectile
         if (Input.GetButton("Fire1") && shotCooldown <= 0)
         {
-            //Animation
-            //anim.SetInteger("State", 1);
-
             //LIGHTNING
             if(weapon == 1)
             {

@@ -33,7 +33,7 @@ public class EnemyMoveToWaypoints : MonoBehaviour
     void Start()
     {
         //.............................................Instantiation
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
 
         moveSpeed = defaultMoveSpeed;
         //checks first waypoint in array for a
@@ -66,9 +66,16 @@ public class EnemyMoveToWaypoints : MonoBehaviour
                 }
             }
 
+            anim.SetBool("IsMoving", true);
             MoveToWaypoint();
             RotateTowardsLocation(waypoint[waypointIndex].transform.position);
 
+        }
+
+        else
+        {
+
+            anim.SetBool("IsMoving", false);
         }
     }
 
@@ -97,15 +104,12 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         //Pause movement if there is a wait time
         if (waitTime > 0f)
         {
-
-            //anim.SetBool("IsMoving", false);
             waitTime = waitTime - Time.deltaTime;
             return;
         }
         else
         {
             //Move toward waypoint and animation declaration
-            //anim.SetBool("IsMoving", true);
             transform.position = Vector3.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
     }

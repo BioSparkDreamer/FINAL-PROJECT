@@ -16,10 +16,7 @@ public class ElementalPoolControl : MonoBehaviour
 
     void Start()
     {
-        //NOTE FROM MIKE: Removed these because they were keeping us from disabling the staffs on start
-        //fire = GameObject.FindGameObjectWithTag("Fire Staff");
-        //ice = GameObject.FindGameObjectWithTag("Ice Staff");
-        //lightning = GameObject.FindGameObjectWithTag("Lightning Staff");
+
     }
 
     private void OnTriggerEnter(Collider other)
