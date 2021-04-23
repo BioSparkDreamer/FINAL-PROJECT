@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpStrength = 3f;
 
+    public AudioSource JumpSound;
+
+
     void Start()
     {
 
@@ -61,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
+            JumpSound.Play();
         }
         
         if(Input.GetKeyDown(KeyCode.Escape))

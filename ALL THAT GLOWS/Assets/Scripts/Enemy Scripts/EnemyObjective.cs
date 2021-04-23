@@ -9,6 +9,8 @@ public class EnemyObjective : MonoBehaviour
     public int currentHealth;
     EnemyHealthBar e;
 
+    public AudioSource castleDamageAudio;
+
     //Destroy enemies when they reach this object
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +21,7 @@ public class EnemyObjective : MonoBehaviour
             e.EnemyKill();
             WinCondition.totalEnemiesRemovedSoFar++;
         }
+
     }
     public HealthBar healthBar;
     void Start()
@@ -40,5 +43,17 @@ public class EnemyObjective : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        castleDamageAudio.Play();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+            TakeDamage(1);
+            e.EnemyKill();
+            WinCondition.totalEnemiesRemovedSoFar++;
+        }
     }
 }
