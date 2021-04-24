@@ -13,6 +13,7 @@ TagManager:
   - Ice Staff
   - Lightning Staff
   - Bad Ground
+  - pool
   layers:
   - Default
   - TransparentFX

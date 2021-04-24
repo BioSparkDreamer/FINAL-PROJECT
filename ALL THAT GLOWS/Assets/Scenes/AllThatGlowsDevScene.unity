@@ -6887,7 +6887,7 @@ GameObject:
   - component: {fileID: 735507713}
   m_Layer: 0
   m_Name: PoolTemple (2)
-  m_TagString: Untagged
+  m_TagString: pool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18616,7 +18616,7 @@ GameObject:
   - component: {fileID: 1727948714}
   m_Layer: 0
   m_Name: PoolTemple (1)
-  m_TagString: Untagged
+  m_TagString: pool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20073,6 +20073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be98048b0ac7b8d48bf0ebdd548138b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staff: {fileID: 3247917951088315873}
   anim: {fileID: 8485826450232545928}
 --- !u!1001 &3355203675155813880
 PrefabInstance:
@@ -20569,6 +20570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be98048b0ac7b8d48bf0ebdd548138b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staff: {fileID: 3725395564098937029}
   anim: {fileID: 7737775277453655980}
 --- !u!23 &3948294865709086161
 MeshRenderer:
@@ -20656,6 +20658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be98048b0ac7b8d48bf0ebdd548138b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staff: {fileID: 5261736530605971454}
   anim: {fileID: 1284699512571775127}
 --- !u!33 &5319738320914733185
 MeshFilter:
@@ -20737,6 +20740,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.20389692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.044337247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9671219
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392233450079639213, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14538096
+      objectReference: {fileID: 0}
     - target: {fileID: 1482600235788199765, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
       propertyPath: m_IsActive
@@ -20806,6 +20844,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792320751657257124, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.316
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792320751657257124, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.769
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792320751657257124, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.581
       objectReference: {fileID: 0}
     - target: {fileID: 6908509548650505574, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
@@ -20965,17 +21018,32 @@ PrefabInstance:
     - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -91.57568
+      value: -73.13042
       objectReference: {fileID: 0}
     - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 4.8599906
       objectReference: {fileID: 0}
     - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 4.8599906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429140543918497168, guid: afe9dab6ac4bdc34585d4cd1d5e6a738,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.894
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe9dab6ac4bdc34585d4cd1d5e6a738, type: 3}
@@ -22009,7 +22077,7 @@ GameObject:
   - component: {fileID: 9002891578057612628}
   m_Layer: 0
   m_Name: PoolTemple
-  m_TagString: Untagged
+  m_TagString: pool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

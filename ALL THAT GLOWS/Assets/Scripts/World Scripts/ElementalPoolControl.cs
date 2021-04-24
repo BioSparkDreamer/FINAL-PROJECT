@@ -12,7 +12,6 @@ public class ElementalPoolControl : MonoBehaviour
     public GameObject fire;
     public GameObject ice;
     public GameObject lightning;
-    
 
     void Start()
     {

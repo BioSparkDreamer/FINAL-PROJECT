@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StaffAnim : MonoBehaviour
 {
+    public GameObject staff;
+    int state;
+
     public Animator anim;
 
     void Start()
@@ -13,12 +16,15 @@ public class StaffAnim : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if(staff.activeSelf && state != 1)
         {
-            //anim.SetInteger("State", 1);
-            anim.Play("Attack");
+            state = 1;
+            anim.Play("Switch");
         }
 
-        //anim.SetInteger("State", 0);
+        if (Input.GetButton("Fire1"))
+        {
+            anim.Play("Attack");
+        }
     }
 }

@@ -41,8 +41,8 @@ AnimatorStateMachine:
     m_State: {fileID: 4002710781858949594}
     m_Position: {x: 400, y: 0, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 9059229801281413131}
-    m_Position: {x: 479.3269, y: -134.23071, z: 0}
+    m_State: {fileID: 8214980803525142036}
+    m_Position: {x: 380, y: -120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -160,14 +160,14 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &9059229801281413131
+--- !u!1102 &8214980803525142036
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Staff_StaffAction 1
+  m_Name: Switch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -180,7 +180,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e8279400b6417be4d892d98f0f512682, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5abd2114a31e3e3449b09110fb432398, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
