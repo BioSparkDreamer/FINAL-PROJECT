@@ -39,8 +39,6 @@ public class PlayerWeaponFire : MonoBehaviour
 
     private float shotCooldown = 0;
 
-    Animator anim;
-
     [Header("Audio Sources")]
     public AudioSource electroballAudio;
     public AudioSource fireballAudio;
@@ -50,8 +48,6 @@ public class PlayerWeaponFire : MonoBehaviour
     {
         //weapons: 0Unarmed - 1Lightning - 2Fire - 3Ice
         weapon = startingWeapon;
-
-        anim = GetComponent<Animator>();
     }
 
   
@@ -77,9 +73,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 //set cooldown
                 shotCooldown = lightningCooldown;
 
-                //Animation
-                //anim.SetInteger("State", 1);
-
                 electroballAudio.PlayOneShot(electroballAudio.clip);
             }
 
@@ -96,9 +89,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 //set cooldown
                 shotCooldown = fireCooldown;
 
-                //Animation
-                //anim.SetInteger("State", 1);
-
                 fireballAudio.PlayOneShot(fireballAudio.clip);            
             }
 
@@ -114,9 +104,6 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f, iceProjectileDamage, 3);
                 //set cooldown
                 shotCooldown = iceCooldown;
-
-                //Animation
-                //anim.SetInteger("State", 1);
 
                 iceballAudio.PlayOneShot(iceballAudio.clip);
             }
