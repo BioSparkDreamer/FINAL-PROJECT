@@ -903,6 +903,10 @@ MonoBehaviour:
     type: 3}
   fireProjectileFromLocation: {fileID: 7088189917463915681}
   playerPosition: {fileID: 7088189917761573768}
+  electroballAudio: {fileID: 0}
+  fireballAudio: {fileID: 0}
+  iceballAudio: {fileID: 0}
+  changeBallStateAudio: {fileID: 0}
 --- !u!82 &273226585
 AudioSource:
   m_ObjectHideFlags: 0
@@ -912,7 +916,8 @@ AudioSource:
   m_GameObject: {fileID: 7088189917761573878}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3f7a8ff7de734fd439bbd02271769924,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 368d2e7f945686b41bfec5d4dabd176c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
