@@ -8033,6 +8033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  castleDamageAudio: {fileID: 0}
   healthBar: {fileID: 250392117}
 --- !u!65 &788297708
 BoxCollider:
