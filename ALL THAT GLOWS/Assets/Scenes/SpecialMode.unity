@@ -600,7 +600,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visual Cube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7843198094753381254, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
 --- !u!1 &44720438 stripped
 GameObject:
@@ -1456,7 +1457,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visual Cube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7843198094753381254, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
 --- !u!1001 &448793716
 PrefabInstance:
@@ -1543,7 +1545,7 @@ PrefabInstance:
     - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: delayBeforeThisWave
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
@@ -2004,6 +2006,7 @@ PrefabInstance:
     - {fileID: 3355203674920514419, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
     - {fileID: 4776261930881692412, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
     - {fileID: 4776261930509008671, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+    - {fileID: 4776261931183529869, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
 --- !u!1 &469459259 stripped
 GameObject:
@@ -2899,7 +2902,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visual Cube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7843198094753381254, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
 --- !u!1 &676313526 stripped
 GameObject:
@@ -5840,6 +5844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 5
+  castleDamageAudio: {fileID: 0}
   healthBar: {fileID: 1013999995}
 --- !u!33 &8779701005694439076
 MeshFilter:
