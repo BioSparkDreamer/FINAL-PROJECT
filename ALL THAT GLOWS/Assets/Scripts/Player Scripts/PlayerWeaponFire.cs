@@ -39,6 +39,13 @@ public class PlayerWeaponFire : MonoBehaviour
 
     private float shotCooldown = 0;
 
+    Animator anim;
+
+    [Header("Audio Sources")]
+    public AudioSource electroballAudio;
+    public AudioSource fireballAudio;
+    public AudioSource iceballAudio;
+    public AudioSource changeBallStateAudio;
     void Start()
     {
         //weapons: 0Unarmed - 1Lightning - 2Fire - 3Ice
@@ -66,6 +73,11 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, lightningProjectileSpeed, 500f, lightningProjectileDamage, 1);
                 //set cooldown
                 shotCooldown = lightningCooldown;
+
+                //Animation
+                //anim.SetInteger("State", 1);
+
+                electroballAudio.PlayOneShot(electroballAudio.clip);
             }
 
             //FIRE
@@ -80,10 +92,15 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, fireProjectileSpeed, 500f, fireProjectileDamage, 2);
                 //set cooldown
                 shotCooldown = fireCooldown;
+
+                //Animation
+                //anim.SetInteger("State", 1);
+
+                fireballAudio.PlayOneShot(fireballAudio.clip);            
             }
 
             //ICE
-            if(weapon == 3)
+            if (weapon == 3)
             {
                 //spawn projectile
                 GameObject newProjectile = Instantiate(iceProjectileObject, fireProjectileFromLocation.position, fireProjectileFromLocation.rotation);
@@ -94,6 +111,11 @@ public class PlayerWeaponFire : MonoBehaviour
                 newProjectile.GetComponent<ProjectilePhysics>().ProjectileProperties(shootDirection, iceProjectileSpeed, 500f, iceProjectileDamage, 3);
                 //set cooldown
                 shotCooldown = iceCooldown;
+
+                //Animation
+                //anim.SetInteger("State", 1);
+
+                iceballAudio.PlayOneShot(iceballAudio.clip);
             }
         } 
     }
@@ -101,7 +123,21 @@ public class PlayerWeaponFire : MonoBehaviour
     //......................................Change Projectile Type
     public void ChangeElement(int element)
     {
+        if (weapon != element)
+        {
+            changeBallStateAudio.Play();
+        }
         shotCooldown = .2f;
         weapon = element;
     }
 }
+
+    //void PlayAudioOnGameobject(GameObject go)
+    //{
+    //    var audio = go.GetComponent<AudioSource>();
+    //    if (audio != null)
+    //    {
+    //        audio.Play();
+    //    }
+    //}
+
