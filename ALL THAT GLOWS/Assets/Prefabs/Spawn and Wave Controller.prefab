@@ -675,7 +675,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visual Cube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7843198094753381254, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca4e67f440b8b7947a551d6a18b54070, type: 3}
 --- !u!4 &7836662618140579782 stripped
 Transform:
