@@ -39,7 +39,7 @@ AnimatorStateMachine:
     m_Position: {x: 390, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4002710781858949594}
-    m_Position: {x: 390, y: 0, z: 0}
+    m_Position: {x: 400, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9059229801281413131}
     m_Position: {x: 479.3269, y: -134.23071, z: 0}
@@ -115,7 +115,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Staff_StaffAction
+  m_Name: Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -129,7 +129,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: ba2eb4059ca5ee34cbd195c5215ac8de, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

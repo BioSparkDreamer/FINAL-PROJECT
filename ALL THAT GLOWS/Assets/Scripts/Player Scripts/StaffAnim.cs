@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaffAttackAnim : MonoBehaviour
+public class StaffAnim : MonoBehaviour
 {
     public Animator anim;
 
@@ -15,9 +15,10 @@ public class StaffAttackAnim : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            anim.SetInteger("State", 1);
+            //anim.SetInteger("State", 1);
+            anim.Play("Attack");
         }
 
-        anim.SetInteger("State", 0);
+        //anim.SetInteger("State", 0);
     }
 }
