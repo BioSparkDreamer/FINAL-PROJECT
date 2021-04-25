@@ -1467,6 +1467,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1633234749}
     m_Modifications:
+    - target: {fileID: 2114430603, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: enemyMovementPathsObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114430603, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: enemyMovementPathsObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 1192157033}
     - target: {fileID: 464188960797553183, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6086,8 +6094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c3f83729b3f5a4c95b8c911f6c956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 10
+  currentHealth: 10
   castleDamageAudio: {fileID: 1235787972}
   healthBar: {fileID: 1013999995}
 --- !u!33 &8779701005694439076
