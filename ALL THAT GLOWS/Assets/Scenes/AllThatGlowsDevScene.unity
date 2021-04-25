@@ -13700,7 +13700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1462943806
 Transform:
   m_ObjectHideFlags: 0
@@ -20701,6 +20701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 354412388}
     m_Modifications:
+    - target: {fileID: 1050977646, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveEnemyElementToSpawn.Array.size
       value: 6
@@ -20948,6 +20952,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3355203674967705017, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3355203675521977978, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
@@ -20963,6 +20972,26 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[2]
       value: 
       objectReference: {fileID: 660375834}
+    - target: {fileID: 3355203675713342258, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018464924986284687, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018464925221025790, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018464925350745964, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7713444065567423125, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
@@ -21151,8 +21180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c3f83729b3f5a4c95b8c911f6c956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
+  maxHealth: 5
+  currentHealth: 5
   castleDamageAudio: {fileID: 3535740347912460745}
   healthBar: {fileID: 1703520703}
 --- !u!65 &3535740347912460744

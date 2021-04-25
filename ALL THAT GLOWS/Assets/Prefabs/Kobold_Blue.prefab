@@ -3318,7 +3318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHealth: 100
-  mismatchElementResistPercentage: 50
+  mismatchElementResistPercentage: 35
   matchElementWeaknessPercentage: 100
   defaultElement0_None1_Lightning2_Fire3_Ice: 3
 --- !u!136 &8067803542435637560
