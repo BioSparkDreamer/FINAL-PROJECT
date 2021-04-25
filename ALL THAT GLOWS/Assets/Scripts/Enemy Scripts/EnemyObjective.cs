@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyObjective : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 10;
     public int currentHealth;
     EnemyHealthBar e;
 

@@ -12809,16 +12809,16 @@ MonoBehaviour:
   waveRouteToTake: 02000000030000000400000003000000000000000300000001000000040000000300000004000000
   waveNumberOfEnemies: 04000000050000000500000004000000040000000500000004000000050000000500000004000000
   waveDelayBeforeWave:
+  - 10
   - 15
-  - 22
-  - 29
-  - 36
-  - 43
-  - 51
-  - 58
-  - 65
-  - 72
-  - 79
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
   delayInsideWave: 1
 --- !u!1 &1185269832
 GameObject:
@@ -20723,15 +20723,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[0]
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[1]
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[2]
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: delayInsideWave
@@ -20807,15 +20807,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[3]
-      value: 30
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[4]
-      value: 35
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: waveDelayBeforeWave.Array.data[5]
-      value: 40
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: delayBeforeThisWave
@@ -20886,7 +20886,7 @@ PrefabInstance:
     - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: delayBeforeThisWave
-      value: 18
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3355203674920514418, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
@@ -21151,7 +21151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c3f83729b3f5a4c95b8c911f6c956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   currentHealth: 0
   castleDamageAudio: {fileID: 3535740347912460745}
   healthBar: {fileID: 1703520703}
