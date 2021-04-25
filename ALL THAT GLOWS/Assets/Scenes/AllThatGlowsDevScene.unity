@@ -6696,7 +6696,7 @@ RectTransform:
   m_Children:
   - {fileID: 981141626}
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6825,7 +6825,7 @@ RectTransform:
   m_Children:
   - {fileID: 1422762869}
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7273,7 +7273,9 @@ MonoBehaviour:
   m_Text: 'ENEMIES WILL APPEAR FROM THE CANYONS.
 
 
+
     WALK TO A FOUNTAIN TO OBTAIN A MAGICAL STAFF.
+
 
 
     MATCHING STAFF ELEMENTS TO ENEMIES IS MOST EFFECTIVE.'
@@ -7292,16 +7294,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789121609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1889385767}
-  m_RootOrder: 7
+  m_Father: {fileID: 1385263383}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 105}
   m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &799188154
@@ -12224,6 +12226,12 @@ Transform:
   m_Father: {fileID: 525268333008808917}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
+--- !u!4 &898919657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 464188960797553183, guid: 250a3436393a62b40bf7e906e4c036f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3355203675155813880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &900418518
 GameObject:
   m_ObjectHideFlags: 0
@@ -12539,7 +12547,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12751,6 +12759,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fe4e890e8e1e64da5d1ab3943794b1, type: 3}
+--- !u!1 &1112532830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112532831}
+  - component: {fileID: 1112532832}
+  m_Layer: 0
+  m_Name: Single Wave Object 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1112532831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112532830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.792, y: -3.3099995, z: 1.767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1462943806}
+  m_Father: {fileID: 898919657}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112532832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112532830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f0c67535363d74b8543d91a69250e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeThisWave: 18
+  waveEnemyElementToSpawn: 03000000020000000100000002000000010000000300000001000000020000000300000001000000
+  waveSpawnerToUse: 00000000010000000200000001000000000000000100000000000000020000000100000002000000
+  waveRouteToTake: 02000000030000000400000003000000000000000300000001000000040000000300000004000000
+  waveNumberOfEnemies: 04000000050000000500000004000000040000000500000004000000050000000500000004000000
+  waveDelayBeforeWave:
+  - 15
+  - 22
+  - 29
+  - 36
+  - 43
+  - 51
+  - 58
+  - 65
+  - 72
+  - 79
+  delayInsideWave: 1
 --- !u!1 &1185269832
 GameObject:
   m_ObjectHideFlags: 0
@@ -13246,6 +13315,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 789121612}
   - {fileID: 1974730367}
   - {fileID: 1045055746}
   - {fileID: 1805665205}
@@ -13613,6 +13683,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451417602}
   m_CullTransparentMesh: 0
+--- !u!1 &1462943805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462943806}
+  - component: {fileID: 1462943808}
+  - component: {fileID: 1462943807}
+  m_Layer: 0
+  m_Name: Visual Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1462943806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462943805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1112532831}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1462943807
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462943805}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1462943808
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462943805}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1494426484
 GameObject:
   m_ObjectHideFlags: 0
@@ -13988,7 +14136,7 @@ RectTransform:
   m_Children:
   - {fileID: 1451417603}
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19558,7 +19706,7 @@ RectTransform:
   m_Children:
   - {fileID: 1916134242}
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19777,7 +19925,6 @@ RectTransform:
   - {fileID: 1439798431}
   - {fileID: 135323325}
   - {fileID: 1385263383}
-  - {fileID: 789121612}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20206,7 +20353,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385263383}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20554,10 +20701,193 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 354412388}
     m_Modifications:
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveSpawnerToUse.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[0]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[2]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: delayInsideWave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[4]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[5]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveSpawnerToUse.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveSpawnerToUse.Array.data[5]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.data[4]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveRouteToTake.Array.data[5]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[5]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[3]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[4]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[5]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480095299, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: delayBeforeThisWave
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114430603, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: singleWaveObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2114430603, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 267691607}
+    - target: {fileID: 2114430603, guid: 250a3436393a62b40bf7e906e4c036f2, type: 3}
+      propertyPath: singleWaveObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1112532830}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveEnemyElementToSpawn.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveRouteToTake.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveRouteToTake.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveNumberOfEnemies.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[0]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[1]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: waveDelayBeforeWave.Array.data[2]
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355203674771967492, guid: 250a3436393a62b40bf7e906e4c036f2,
+        type: 3}
+      propertyPath: delayBeforeThisWave
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3355203674920514418, guid: 250a3436393a62b40bf7e906e4c036f2,
         type: 3}
       propertyPath: m_Name

@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
 
 	public void FadeOut()
 	{
-		fadeText.CrossFadeAlpha(0, 10, false);
+		fadeText.CrossFadeAlpha(0, 20, false);
 	}
 
 	//..........................................Reloads the Level
