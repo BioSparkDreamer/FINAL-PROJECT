@@ -41,8 +41,6 @@ public class EnemyMoveToWaypoints : MonoBehaviour
         //.............................................Turn on movement
         if (startMovement == true)
         {
-            //Put animation for walking here
-
             //check if current destination reached on x/z axis
             waypointLocationCheck = waypoint[waypointIndex].transform.position;
             waypointLocationCheck.y = transform.position.y;
@@ -52,8 +50,6 @@ public class EnemyMoveToWaypoints : MonoBehaviour
                 if (waypointIndex < waypoint.Length - 1)
                 {
                     waypointIndex = waypointIndex + 1;
-                    //check if it has a WaypointAdjuster script
-                    //CheckWaypoint(); (NOT USING!)
                 }
                 //...............................................Turn off movement at end of array
                 else
@@ -62,10 +58,8 @@ public class EnemyMoveToWaypoints : MonoBehaviour
                     startMovement = false;
                 }
             }
-
             MoveToWaypoint();
             RotateTowardsLocation(waypoint[waypointIndex].transform.position);
-
         }
     }
 
@@ -124,15 +118,14 @@ public class EnemyMoveToWaypoints : MonoBehaviour
 
 
     //...............................................When spawned, take movement orders
-    public void OnCreationWaypoints(GameObject route)
+    public void OnCreationWaypoints(GameObject routeObject)
     {
-        if (route != null)
+        if (routeObject != null)
         {
-            
-            newRoute = route.GetComponent<EnemyMovementPath>().wayPoints;
-            //System.Array.Copy(newRoute, route.GetComponent<EnemyMovementPath>().wayPoints, 1);
+            //Get GameObject array passed from spawner
+            newRoute = routeObject.GetComponent<EnemyMovementPath>().wayPoints;
 
-            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + route.name + ". Adding " + newRoute.Length + " waypoints.");
+            print("ENEMY SPAWN: Route Detected, changing to waypoints in " + routeObject.name + ". Adding " + newRoute.Length + " waypoints.");
 
             //change passed array into local array
             for (int i = 0; i < newRoute.Length; i++)

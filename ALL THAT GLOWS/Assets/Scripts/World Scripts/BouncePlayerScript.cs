@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class BouncePlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //................................................Call function from player script to force the player to jump on collision
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

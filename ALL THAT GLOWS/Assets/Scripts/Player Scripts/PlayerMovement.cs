@@ -33,12 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource JumpSound;
 
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         //..............................................Ground check/Fall velocity reset

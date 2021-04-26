@@ -53,9 +53,10 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
 
     private void Start()
     {
-        //get healthbar
+        //..................................................get healthbar
         enemyHealthBarScript = healthBar.GetComponent<EnemyHealthBar>();
 
+        //..................................................Calculate Win Condition
         //find total number of enemies that must be defeated for the "WinCondition" script
         for (int j = 0; j < singleWaveObjects.Length; j++)
         {
@@ -68,13 +69,13 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             //enemyHealthBarScript.maxHealth = WinCondition.totalEnemiesToRemoveToWin;
         }
 
-        //set initial wave object
+        //...................................................set initial wave object
         currentWaveObjectReference = singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>();
     }
 
     void Update()
     {
-        //track time
+        //.....................................track time
         timer = timer + Time.deltaTime;
 
         //....................................Spawn 'full-wave' at delay time
@@ -144,9 +145,12 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             }
 
             //....................................Spawn enemy at a spawner location
+            //Index is determined both by 'mini-waves' AND 'full-waves.'
             GameObject newEnemy = Instantiate(prefabToSpawn, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.position, spawnerLocationObjects[currentWaveObjectReference.waveSpawnerToUse[indexSpawnerLocationObjects]].transform.rotation);
 
             //....................................Give spawned unit movement orders
+            //Use "OnCreationWaypoints" function on enemy GameObject, and pass to it a waypoints GameObject of current index in this script
+            //Index is determined both by 'mini-waves' AND 'full-waves.'
             newEnemy.GetComponent<EnemyMoveToWaypoints>().OnCreationWaypoints(enemyMovementPathsObjects[currentWaveObjectReference.waveRouteToTake[indexEnemyMovementPathsObjects]]);
 
             //....................................Turn off 'mini-wave' when limit reached, go to next 'mini-wave' in arrays
