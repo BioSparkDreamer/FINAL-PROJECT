@@ -89,11 +89,7 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             indexDelayBeforeWaves = 0;
             indexEnemyElement = 0;
             indexNumberOfEnemies = 0;
-            indexEnemyMovementPathsObjects = 0;
-
-
-            //get wave object reference
-            currentWaveObjectReference = singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>();
+            indexEnemyMovementPathsObjects = 0;            
 
             //set mini wave total from wave object
             totalMiniWaves = currentWaveObjectReference.waveNumberOfEnemies.Length;
@@ -226,6 +222,9 @@ public class SpawnerOfEnemiesScript : MonoBehaviour
             indexNumberOfEnemies = 0;
             indexEnemyMovementPathsObjects = 0;
             indexSpawnerLocationObjects = 0;
+
+            //get wave object reference
+            currentWaveObjectReference = singleWaveObjects[indexSingleWaveObject].GetComponent<SingleWaveObject>();
         }
     }
 }
